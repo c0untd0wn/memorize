@@ -20,26 +20,43 @@ function newFilledArray(len, val) {
 var check = newFilledArray(length, 0);
 
 $(document).ready(function(){
+	var type = window.location.search.replace( "?", "" ).split('=')[1];
+	if(type == 2) {
+		$('#type2').addClass('active');
+	}
+	else {
+		$('#type1').addClass('active');
+	}
+	$('#type1').click(function(){
+		type = 1
+		$('#type2').removeClass('active');
+		$('#type1').addClass('active');
+	});
+	$('#type2').click(function(){
+		type = 2
+		$('#type1').removeClass('active');
+		$('#type2').addClass('active');
+	});
+	
     $('#next').click(function(){
-	type = window.location.search.replace( "?", "" ).split('=')[1];
-	var index = Math.floor(Math.random() * length);
-	while(check[index] == 1) {
-	    index = Math.floor(Math.random() * length);
-	}
-	check[index] = 1;
-	var q = data2[index];
-	var a = data1[index];
-	if(type == "1") {
-	    q = data1[index];
-	    a = data2[index];
-	}
-	$('#question').empty();
-	$('#question').append('<span>' + q + '</span>');
-	$('#answer').empty();
-	$('#answer').append('<span class="hidden">' + a + '</span>');
+		var index = Math.floor(Math.random() * length);
+		while(check[index] == 1) {
+			index = Math.floor(Math.random() * length);
+		}
+		check[index] = 1;
+		var q = data2[index];
+		var a = data1[index];
+		if(type == "1") {
+			q = data1[index];
+			a = data2[index];
+		}
+		$('#question').empty();
+		$('#question').append('<span>' + q + '</span>');
+		$('#answer').empty();
+		$('#answer').append('<span class="hidden">' + a + '</span>');
     });
 
     $('#show-answer').click(function(){
-	$('.hidden').removeClass('hidden');
+		$('.hidden').removeClass('hidden');
     });
 });

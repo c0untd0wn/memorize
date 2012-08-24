@@ -20,7 +20,7 @@ function newFilledArray(len, val) {
 var check = newFilledArray(length, 0);
 
 $(document).ready(function(){
-	var type = Nuumber(window.location.search.replace( "?", "" ).split('=')[1]);
+	var type = Number(window.location.search.replace( "?", "" ).split('=')[1]);
 	if(type == 2) {
 		$('#type2').addClass('active');
 	}
@@ -52,12 +52,12 @@ $(document).ready(function(){
 			a = data2[index];
 		}
 		$('#question').empty();
-		$('#question').append('<span>' + q + '</span>');
+		$('#question').append('<h3>' + q + '</h3>');
 		$('#answer').empty();
-		$('#answer').append('<span class="hidden">' + a + '</span>');
+		$('#answer').append('<h3 class="hide-answer">' + a + '</h3>');
     });
 
     $('#show-answer').click(function(){
-		$('.hidden').removeClass('hidden');
+		$('.hide-answer').removeClass('hide-answer');
     });
 });

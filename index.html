@@ -19,22 +19,28 @@
 		<header id="overview">
 			<div class="container">
 				<h1>Memorize</h1>
-				<p class="desktop-visible lead">A simple tool for learning/memorizing things that are correspondent</p>
+				<p class="visible-desktop lead">A simple tool for learning/memorizing things that are correspondent</p>
 			</div>
 		</header>
 		<section id="menu">
 			<div class="container">
 				<ul class="nav nav-tabs">
-					<li id="type1"><a href="#">Q (data1) &amp; A (data2)</a></li>
-					<li id="type2"><a href="#">Q (data2) &amp; A (data1)</a></li>
+					<li id="type1"><a href="#">Type 1</a></li>
+					<li id="type2"><a href="#">Type 2</a></li>
 				</ul>
 			</div>
 		</section>
-		<div class="container">
-			<div id="question"></div>
-			<div id="answer"></div>
-			<button class="btn btn-primary" id="next">Next</button>
-			<button class="btn btn-danger" id="show-answer">Answer</button>
-		</div>
+		<section id="menu">
+			<div class="container">
+				<div class="row"><div class="span12 pagination-centered" id="question"><h3>&nbsp;</h3></div></div>
+				<div class="row"><div class="span12 pagination-centered" id="answer"><h3>&nbsp;</h3></div></div>
+				<div class="row" id="buttons">
+					<div class="span12 pagination-centered">
+						<button class="btn btn-primary" id="next">Next</button>
+						<button class="btn btn-danger" id="show-answer">Answer</button>
+					</div>
+				</div>
+			</div>
+		</section>
 	</body>
 </html>

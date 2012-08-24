@@ -20,7 +20,7 @@ function newFilledArray(len, val) {
 var check = newFilledArray(length, 0);
 
 $(document).ready(function(){
-	var type = Nuumber(window.location.search.replace( "?", "" ).split('=')[1]);
+	var type = Number(window.location.search.replace( "?", "" ).split('=')[1]);
 	if(type == 2) {
 		$('#type2').addClass('active');
 	}

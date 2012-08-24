@@ -20,12 +20,13 @@ function newFilledArray(len, val) {
 var check = newFilledArray(length, 0);
 
 $(document).ready(function(){
-	var type = window.location.search.replace( "?", "" ).split('=')[1];
+	var type = Nuumber(window.location.search.replace( "?", "" ).split('=')[1]);
 	if(type == 2) {
 		$('#type2').addClass('active');
 	}
 	else {
 		$('#type1').addClass('active');
+		type = 1
 	}
 	$('#type1').click(function(){
 		type = 1
@@ -46,7 +47,7 @@ $(document).ready(function(){
 		check[index] = 1;
 		var q = data2[index];
 		var a = data1[index];
-		if(type == "1") {
+		if(type == 1) {
 			q = data1[index];
 			a = data2[index];
 		}
